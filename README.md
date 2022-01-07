@@ -12,9 +12,7 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -34,6 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/tbscanlon/fm-nft-preview)
+- Live site URL: [Github Pages](https://tbscanlon.github.io/fm-nft-preview/src/index.html)
 
 ## My process
 
