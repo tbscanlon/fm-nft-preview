@@ -8,10 +8,25 @@
   --colour-blue-200: hsl(215, 51%, 70%);
   --colour-blue-100: hsl(178, 100%, 50%);
   --colour-white: hsl(0, 0%, 100%);
+  --colour-overlay: hsla(178, 100%, 50%, 0.5);
 
   /* Font sizes */
   --font-heading: 1.4rem;
   --font-body: 1rem;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-s: 16px;
+  --space-m: 24px;
+
+  /* Transitions */
+  --transition-link: 0.3s;
+
+  /* Borders */
+  --border-divider: 1px solid var(--colour-blue-300);
+  --border-avatar: 1px solid var(--colour-white);
+  --border-radius-content: 16px;
+  --border-radius-full: 99px;
 }
 
 * {
@@ -30,13 +45,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: var(--space-m);
   margin: 0;
 }
 
 a {
   color: var(--colour-white);
   text-decoration: none;
+  transition: var(--transition-link);
+}
+
+a:hover,
+a:focus {
+  color: var(--colour-blue-100);
 }
 
 /* NFT Preview Card */
@@ -44,14 +65,39 @@ a {
   background-color: var(--colour-blue-400);
   color: var(--colour-blue-200);
   width: 100%;
-  max-width: 600px;
-  padding: 24px;
-  border-radius: 10px;
+  max-width: 375px;
+  padding: var(--space-m);
+  border-radius: var(--border-radius-content);
 }
 
 /* Preview image */
 .preview {
-  border-radius: 10px;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.preview .overlay {
+  transition: var(--transition-link);
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--colour-overlay);
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-content);
+}
+
+.preview:hover .overlay,
+.preview:focus .overlay {
+  opacity: 1;
+}
+
+.preview img {
+  border-radius: var(--border-radius-content);
   width: 100%;
 }
 
@@ -60,6 +106,7 @@ a {
   color: var(--colour-white);
   font-size: var(--font-heading);
   font-weight: 600;
+  margin: var(--space-m) 0 var(--space-m) 0;
 }
 
 /* Card body text */
@@ -73,9 +120,9 @@ a {
 .sale-info {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--colour-blue-300);
-  padding-bottom: 16px;
-  margin-bottom: 16px;
+  border-bottom: var(--border-divider);
+  padding-bottom: var(--space-s);
+  margin-bottom: var(--space-s);
 }
 
 .sale-info > div {
@@ -95,13 +142,13 @@ a {
 }
 
 .sale-info span {
-  padding-left: 8px;
+  padding-left: var(--space-xs);
 }
 
 /* Card footer (NFT creator and avatar) */
 .avatar {
   width: 32px;
-  border: 1px solid var(--colour-white);
+  border: var(--border-avatar);
   border-radius: 99px;
 }
 
@@ -111,15 +158,30 @@ a {
 }
 
 .creator span {
-  margin-left: 16px;
+  margin-left: var(--space-s);
 }
 
 /* Stuff at the bottom */
 .attribution {
+  padding-top: var(--space-m);
   font-size: 11px;
   text-align: center;
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 1280px) {
+  /* Card body text */
+  .card p {
+    line-height: 1.4;
+  }
+
+  /* NFT price and sale duration */
+  .sale-info {
+    padding-bottom: var(--space-m);
+    margin-bottom: var(--space-m);
+    margin-top: var(--space-m);
+  }
 }
