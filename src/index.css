@@ -1,0 +1,31 @@
+:root {
+  /* Colour palette */
+  --colour-blue-500: hsl(217, 54%, 11%);
+  --colour-blue-400: hsl(216, 50%, 16%);
+  --colour-blue-300: hsl(215, 32%, 27%);
+  --colour-blue-200: hsl(215, 51%, 70%);
+  --colour-blue-100: hsl(178, 100%, 50%);
+  --colour-white: hsl(0, 0%, 100%);
+
+  /* Font sizes */
+  --font-paragraph: 1.125rem;
+}
+
+html {
+  background-color: var(--colour-blue-400);
+  color: var(--colour-white);
+  font-size: var(--font-paragraph);
+}
+
+.card {
+  background-color: var(--colour-blue-500);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
